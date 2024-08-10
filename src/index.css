@@ -8,10 +8,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   background-color: #00274C;
-  
 }
 html {
     scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Courgette";
+    src: url("./common/fonts/Courgette-Regular.ttf");
+}
+@font-face {
+    font-family: "Pacifico";
+    src: url("./common/fonts/Pacifico-Regular.ttf");
 }
 
 code {
@@ -26,6 +34,7 @@ h1, h2, h3, h4, p {
 p {
     font-size: 12pt;
     line-height: 16pt;
+    margin-bottom: 12px;
 }
 h1 {
     font-size: 30pt;
@@ -34,4 +43,15 @@ h2 {
     font-size: 20pt;
     font-weight: 800;
     margin-bottom: 18px;
+}
+h3 {
+    font-size: 16pt;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+li {
+    margin-bottom: 8px;
+    margin-left: -16px;
+    line-height: 16pt;
 }
