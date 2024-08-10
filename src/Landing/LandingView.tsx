@@ -47,7 +47,7 @@ export default function LandingView(): JSX.Element {
                             <img src={twitterIcon} alt="Twitter"/>
                         </button>
                         <button className="icon-button-invert"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}>
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}>
                             <img src={instagramIcon} alt="Instagram"/>
                         </button>
                         <button className="icon-button-invert"
@@ -103,7 +103,7 @@ export default function LandingView(): JSX.Element {
                                 onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}/>
                             <img src={instagramIcon} className="upcoming-event-icon"
                                 alt="InstagramIcon"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}/>
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
                                 onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>
@@ -141,7 +141,7 @@ export default function LandingView(): JSX.Element {
                                 onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}/>
                             <img src={instagramIcon} className="upcoming-event-icon"
                                 alt="InstagramIcon"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}/>
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
                                 onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>

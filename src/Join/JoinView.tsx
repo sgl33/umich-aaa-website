@@ -1,6 +1,6 @@
 import "./Join.css";
 import { BrowserView, MobileView, isMobile } from "react-device-detect"
-import backgroundImg from "../common/aaa-background.jpg"
+import backgroundImg from "../common/ac2024.jpg"
 import discordIcon from "../common/discord-icon.png"
 import twitterIcon from "../common/twitter-icon.svg"
 import ActionButton from "../common/ActionButton"
@@ -42,7 +42,7 @@ export default function FurriesView(): JSX.Element {
                                 Join our <a href="https://discord.gg/TteNpmmj" target="_blank">Discord server</a>. You will receive updates and get the link to the Telegram group chat.
                             </li>
                             <li>
-                                DM us on <a href="https://www.instagram.com/anthroartassociation/" target="_blank">Instagram</a> or <a href="#admin">email us</a>.
+                                DM us on <a href="https://www.instagram.com/furriesatumich/" target="_blank">Instagram</a> or <a href="#admin">email us</a>.
                             </li>
                             <li>
                                 Know someone in the club? Ask them for an invite.

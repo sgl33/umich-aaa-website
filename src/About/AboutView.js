@@ -7,6 +7,8 @@ import Slider from "react-slick";
 import clubLogo from "../common/club-logo.jpg"
 import { BrowserView, MobileView, isMobile } from "react-device-detect"
 import sampleImage from "../common/aaa-background.jpg"
+import takio05 from "../common/takio-05.jpg"
+import festifall2023 from "../common/festifall2023.jpg"
 
 export default function AboutView() {
     const carouselSettings = {
@@ -56,8 +58,8 @@ export default function AboutView() {
                     {/* Carousel */}
                     <div className="carousel-desktop-container">
                         <Slider {...carouselSettings} className="carousel-desktop">
-                            <img src={sampleImage}  />
-                            <img src={sampleImage} />
+                            <img src={takio05} />
+                            <img src={festifall2023} />
                         </Slider>
                     </div>
                     
