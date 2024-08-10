@@ -5,7 +5,7 @@ import backgroundImg from "../common/aaa-background.jpg"
 import twitterIcon from "./twitter-icon.svg"
 import instagramIcon from "./instagram-icon.svg"
 import discordIcon from "./discord-icon.png"
-import clubLogo from "../common/club-logo.jpg"
+import clubLogo from "../common/club-logo-transparent.png"
 import calendarIcon from "./calendar-icon.svg"
 
 import { BrowserView, MobileView } from "react-device-detect"
@@ -39,7 +39,9 @@ export default function LandingView(): JSX.Element {
                 {/* Top icons and social media buttons */}
                 <div id="top-buttons-container" className="top-icons">
                     <div className="left-icons">
-                        <img src={clubLogo} alt="AAA Logo" className="top-logo"/>
+                        <a href='/'>
+                            <img src={clubLogo} alt="AAA Logo" className="top-logo"/>
+                        </a>
                     </div>
                     <div className="right-icons">
                         <button className="icon-button-invert"

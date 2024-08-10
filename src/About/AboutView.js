@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
-import clubLogo from "../common/club-logo.jpg"
+import clubLogo from "../common/club-logo-transparent.png"
 import { BrowserView, MobileView, isMobile } from "react-device-detect"
 import sampleImage from "../common/aaa-background.jpg"
 

@@ -10,7 +10,6 @@ function App() {
     <div className="app">
         <LandingView />
         <AboutView />
-        <LandingView />
     </div>
   );
 }
