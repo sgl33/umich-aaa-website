@@ -1,0 +1,30 @@
+#about {
+    background-color: white;
+}
+
+
+.view-content-three-rows {
+    margin-top: 36px;
+    margin-bottom: 16px;
+    position: relative;
+}
+.view-content-three-rows .content-left,
+.view-content-three-rows .content-middle,
+.view-content-three-rows .content-right {
+    display: inline-block;
+    vertical-align: top;
+}
+.view-content-three-rows .content-left {
+    width: 200px;
+    margin-right: 60px;
+}
+.view-content-three-rows .content-middle {
+    width: calc(50% - 190px);
+    margin-right: 56px;
+}
+.view-content-three-rows .content-right {
+    width: calc(50% - 190px);
+}
+.view-content-three-rows p {
+    margin-bottom: 12px;
+}
