@@ -2,11 +2,11 @@ import "./Landing.css";
 import "../App.css"
 
 import backgroundImg from "../common/aaa-background.jpg"
-import twitterIcon from "./twitter-icon.svg"
-import instagramIcon from "./instagram-icon.svg"
-import discordIcon from "./discord-icon.png"
+import twitterIcon from "../common/twitter-icon.svg"
+import instagramIcon from "../common/instagram-icon.svg"
+import discordIcon from "../common/discord-icon.png"
 import clubLogo from "../common/club-logo-transparent.png"
-import calendarIcon from "./calendar-icon.svg"
+import calendarIcon from "../common/calendar-icon.svg"
 
 import { BrowserView, MobileView } from "react-device-detect"
 
@@ -45,7 +45,7 @@ export default function LandingView(): JSX.Element {
                     </div>
                     <div className="right-icons">
                         <button className="icon-button-invert"
-                                onClick={() => openInNewTab("https://x.com/AnthroArtAssoci")}>
+                                onClick={() => openInNewTab("https://x.com/AnthroArtAssociation")}>
                             <img src={twitterIcon} alt="Twitter"/>
                         </button>
                         <button className="icon-button-invert"

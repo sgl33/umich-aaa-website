@@ -1,0 +1,20 @@
+{
+    "stickers": [
+        {
+            "name": "whiskey-blep",
+            "display-name": "Whiskey Blep",
+            "src": "./stickers/whiskey_blep.png",
+            "style": {"top": "2rem"},
+            "class": "sticker",
+            "link": ""
+        },
+        {
+            "name": "whiskey-bark",
+            "display-name": "Whiskey Bark",
+            "src": "./stickers/whiskey_bark.png",
+            "style": {"top": "3rem", "left": "6rem", "rotate": "15deg"},
+            "class": "sticker",
+            "link": ""
+        }
+    ]
+}
