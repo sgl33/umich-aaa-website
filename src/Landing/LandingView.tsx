@@ -5,7 +5,7 @@ import backgroundImg from "../common/aaa-background.jpg"
 import twitterIcon from "../common/twitter-icon.svg"
 import instagramIcon from "../common/instagram-icon.svg"
 import discordIcon from "../common/discord-icon.png"
-import clubLogo from "../common/club-logo.jpg"
+import clubLogo from "../common/club-logo.png"
 import calendarIcon from "../common/calendar-icon.svg"
 
 import { BrowserView, MobileView } from "react-device-detect"
