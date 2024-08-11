@@ -1,7 +1,7 @@
 import "./Stickerboard.css";
 import "../App.css"
 
-import React, { Component, FC } from "react";
+import React, { Component, FC, useState } from "react";
 
 import backgroundImg from "../common/aaa-background.jpg"
 import twitterIcon from "../common/twitter-icon.svg"
@@ -10,39 +10,40 @@ import discordIcon from "../common/discord-icon.png"
 import clubLogo from "../common/club-logo-transparent.png"
 import calendarIcon from "../common/calendar-icon.svg"
 import stickerConfig from './stickers.json';
-import { Tooltip } from 'react-tooltip'
 
-interface IProps{
-    
-}
+interface IProps{}
+
 const Stickerboard:FC<IProps> = () => {
     const openInNewTab = (url: string) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
     }
     const mapStickers = () => {
+        let i = 0;
         return(
             <>
             {stickerConfig.stickers.map( (element) => {
                 return(
-                    
-                    <span style={{display: "flex"}}>
-                        <a href={element["link"]}>
-                                <img
-                                src={element["src"]}
-                                alt={element["display-name"]}
-                                key={element["display-name"]}
-                                style={element["style"]}
-                                className={element["class"]}
-                            />
-                        </a>
-                    </span>
+                    <>
+                        <span style={{display: "flex"}}>
+                            <a href={element["link"]}>
+                                    <img
+                                    src={element["src"]}
+                                    alt={element["display-name"]}
+                                    key={element["display-name"]}
+                                    style={element["style"]}
+                                    className={element["class"]}
+                                />
+                            </a>
+                        </span>
+                    </>
+
                 )
             })}
             </>
         )
     }
-    mapStickers();
+
     return(
         <>
             <div id="stickerboard" className="view-section-container">
