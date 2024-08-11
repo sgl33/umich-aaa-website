@@ -25,13 +25,17 @@
 }
 .admins-view-content-mobile .admin-pfp {
     width: 80px;
+    height: 80px;
     border-radius: 50%;
     /* border-style: solid;
     border-color: lightgray; */
     margin-bottom: 4px;
+    object-fit: cover;
 }
 .admins-view-content-desktop .admin-pfp {
     width: 120px;
+    height: 120px;
+    object-fit: cover;
     border-radius: 50%;
     /* border-style: solid;
     border-color: lightgray; */
