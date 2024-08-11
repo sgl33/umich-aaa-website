@@ -100,8 +100,8 @@ export default function AboutView() {
             <div id="about-mobile" className="view-section-container">
                 <div className="carousel-mobile-container">
                 <Slider {...carouselSettings} className="carousel-desktop">
-                    <img src={sampleImage} />
-                    <img src={sampleImage} />
+                    <img src={takio05} />
+                    <img src={festifall2023} />
                 </Slider>
                 </div>
             </div>
