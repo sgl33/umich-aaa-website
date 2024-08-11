@@ -2,11 +2,11 @@ import "./Landing.css";
 import "../App.css"
 
 import backgroundImg from "../common/aaa-background.jpg"
-import twitterIcon from "./twitter-icon.svg"
-import instagramIcon from "./instagram-icon.svg"
-import discordIcon from "./discord-icon.png"
-import clubLogo from "../common/club-logo-transparent.png"
-import calendarIcon from "./calendar-icon.svg"
+import twitterIcon from "../common/twitter-icon.svg"
+import instagramIcon from "../common/instagram-icon.svg"
+import discordIcon from "../common/discord-icon.png"
+import clubLogo from "../common/club-logo.jpg"
+import calendarIcon from "../common/calendar-icon.svg"
 
 import { BrowserView, MobileView } from "react-device-detect"
 
@@ -45,11 +45,11 @@ export default function LandingView(): JSX.Element {
                     </div>
                     <div className="right-icons">
                         <button className="icon-button-invert"
-                                onClick={() => openInNewTab("https://x.com/AnthroArtAssoci")}>
+                                onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}>
                             <img src={twitterIcon} alt="Twitter"/>
                         </button>
                         <button className="icon-button-invert"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}>
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}>
                             <img src={instagramIcon} alt="Instagram"/>
                         </button>
                         <button className="icon-button-invert"
@@ -72,7 +72,7 @@ export default function LandingView(): JSX.Element {
                     </a>
                 </div>
 
-                <div style={{height: "60px"}}></div>
+                <div style={{height: "100px"}}></div>
                 
                 {/* Upcoming Events */}
                 <div className="invert-content">
@@ -102,10 +102,10 @@ export default function LandingView(): JSX.Element {
                             </p>
                             <img src={twitterIcon} className="upcoming-event-icon"
                                 alt="Twitter Icon"
-                                onClick={() => openInNewTab("https://x.com/AnthroArtAssoci")}/>
+                                onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}/>
                             <img src={instagramIcon} className="upcoming-event-icon"
                                 alt="InstagramIcon"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}/>
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
                                 onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>
@@ -140,10 +140,10 @@ export default function LandingView(): JSX.Element {
                             <div className="right-icons">
                             <img src={twitterIcon} className="upcoming-event-icon"
                                 alt="Twitter Icon"
-                                onClick={() => openInNewTab("https://x.com/AnthroArtAssoci")}/>
+                                onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}/>
                             <img src={instagramIcon} className="upcoming-event-icon"
                                 alt="InstagramIcon"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}/>
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
                                 onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>

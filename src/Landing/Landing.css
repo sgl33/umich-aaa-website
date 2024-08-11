@@ -23,7 +23,7 @@
     top: 0;
     left: 0;
     background-color: #00274C;
-    opacity: 0.75;
+    opacity: 0.8;
     z-index: -999;
 }
 
@@ -32,7 +32,7 @@
     position: relative;
     opacity: 0.85;
     height: 54px;
-    margin-top: -12px; margin-bottom: 212px;
+    margin-top: -12px; margin-bottom: 180px;
 }
 .top-logo {
     background: none;
@@ -74,6 +74,7 @@
 
 .landing-main-text {
     color: #FFCB05;
+    /* font-family: "Pacifico", sans-serif; */
     font-size: 250%;
     margin-bottom: 12px;
 }
@@ -105,6 +106,8 @@
 .upcoming-event-container-mobile {
     width: 70%;
     margin-right: 16px;
+    padding-top: 12px;
+    padding-bottom: 10px;
 }
 .upcoming-event-container-mobile-small {
     width: 85%;
@@ -124,14 +127,15 @@
     background-color: rgba(255, 255, 255, 0.7);
     color: black;
     border-style: none;
-    font-size: 12pt;
+    /* font-size: 12pt; */
+    font-weight: 800;
     position: absolute;
     margin-top: 48px;
 }
 .upcoming-event-container-desktop {
     width: 25%; min-width: 250px;
     padding-top: 16px;
-    min-height: 112px;
+    min-height: 110px;
     vertical-align: top;
 }
 .upcoming-event-name {

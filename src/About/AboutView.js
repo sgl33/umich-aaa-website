@@ -7,6 +7,8 @@ import Slider from "react-slick";
 import clubLogo from "../common/club-logo-transparent.png"
 import { BrowserView, MobileView, isMobile } from "react-device-detect"
 import sampleImage from "../common/aaa-background.jpg"
+import takio05 from "../common/takio-05.jpg"
+import festifall2023 from "../common/festifall2023.jpg"
 
 export default function AboutView() {
     const carouselSettings = {
@@ -16,7 +18,8 @@ export default function AboutView() {
         slidesToShow: 1,
         autoplay: true,
         autoplaySpeed: 7000,
-        arrows: false
+        arrows: false,
+        // centerMode: true
     }
 
     return (
@@ -44,7 +47,7 @@ export default function AboutView() {
                             <p>
                                 We hold weekly meetings where furries can gather, socialize, and collaborate on artistic projects, as well as provide resources for artists and fursuit makers. Additionally, we occasionally host special events such as public fursuiting and field trips to nearby attractions!
                             </p>
-                            <p>
+                            <p className="action-link">
                                 Interested?&nbsp;
                                 <a href="#join">
                                     Join now!
@@ -53,21 +56,55 @@ export default function AboutView() {
                         </div>
                     </div>
                     {/* Carousel */}
-                    <Slider {...carouselSettings} className="carousel-desktop">
-                        <img src={sampleImage} />
-                        <img src={sampleImage} />
-                    </Slider>
+                    <div className="carousel-desktop-container">
+                        <Slider {...carouselSettings} className="carousel-desktop">
+                            <img src={takio05} />
+                            <img src={festifall2023} />
+                        </Slider>
+                    </div>
+                    
                 </BrowserView>
-                
+                <MobileView>
+                    <div>
+                        <img src={clubLogo} className="club-logo-mobile"/>
+                        <div className="view-content-mobile">
+                            <h2>What is AAA?</h2>
+                            <p>
+                                Anthro Art Association (AAA) is a registered voluntary student organization (VSO) at the University of Michigan - Ann Arbor.
+                            </p>
+                            <p>
+                                We are a member club of the Anthromorphic Animal Appreciation Association, a global network of university furry clubs including clubs at UC Berkley, UIUC, Georgia Tech, and more.
+                            </p>
+                        </div>
+                        <div className="view-content-mobile">
+                            <h2>What do we do?</h2>
+                            <p>
+                                We hold weekly meetings where furries can gather, socialize, and collaborate on artistic projects, as well as provide resources for artists and fursuit makers. Additionally, we occasionally host special events such as public fursuiting and field trips to nearby attractions!
+                            </p>
+                            <p className="action-link">
+                                Interested?&nbsp;
+                                <a href="#join">
+                                    Join now!
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                </MobileView>
                 
             </div>
 
         </div>
         <MobileView>
-        <   Slider {...carouselSettings} className="carousel-desktop">
-                        <img src={sampleImage} />
-                        <img src={sampleImage} />
-                    </Slider>
+            <div id="about-mobile" className="view-section-container">
+                <div className="carousel-mobile-container">
+                <Slider {...carouselSettings} className="carousel-desktop">
+                    <img src={sampleImage} />
+                    <img src={sampleImage} />
+                </Slider>
+                </div>
+            </div>
         </MobileView>
         </>
     )
