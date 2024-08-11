@@ -1,0 +1,55 @@
+#about {
+    background-color: white;
+}
+#about-mobile {
+    background-color: white;
+    padding-top: 0px;
+}
+
+
+.view-content-three-rows {
+    margin-top: 36px;
+    margin-bottom: 24px;
+    position: relative;
+}
+.view-content-three-rows .content-left,
+.view-content-three-rows .content-middle,
+.view-content-three-rows .content-right {
+    display: inline-block;
+    vertical-align: top;
+}
+.view-content-three-rows .content-left {
+    width: 200px;
+    margin-right: 60px;
+}
+.view-content-three-rows .content-middle {
+    width: calc(50% - 190px);
+    margin-right: 56px;
+}
+.view-content-three-rows .content-right {
+    width: calc(50% - 190px);
+}
+.view-content-three-rows p,
+.view-content-mobile p {
+    margin-bottom: 12px;
+}
+.view-content-mobile {
+    margin-top: 24px;
+
+}
+.club-logo-mobile {
+    display: block;
+    width: 50%;
+    margin: 24px auto 32px;
+}
+.action-link {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #00274C;
+}
+.action-link a {
+    color: #00274C;
+    text-decoration-color: #ffcb05;
+    text-decoration-thickness: 2.5px;
+    font-weight: 700;
+}

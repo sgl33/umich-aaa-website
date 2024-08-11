@@ -1,0 +1,33 @@
+.action-button {
+    width: 420px;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    padding: 6px 12px;
+    border-style: none;
+    border-radius: 12px;
+    transition: 0.2s;
+    margin-bottom: 8px;
+}
+.action-button:hover {
+    filter: brightness(0.8);
+}
+.action-button img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-style: none;
+    vertical-align: middle;
+    margin-right: 16px;
+}
+.action-button .smaller-icon {
+    width: 22px;
+    height: 22px;
+    margin-top: 5px; margin-bottom: 5px;
+}
+.action-button span {
+    vertical-align: middle;
+    font-size: 13pt;
+    font-weight: 600;
+    display: inline-block;
+}
