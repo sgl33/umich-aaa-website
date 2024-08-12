@@ -19,6 +19,16 @@
             "class": "sticker",
             "container-class": "sticker-container",
             "link": ""
+        },
+        {
+            "name": "whiskey-blep1",
+            "display-name": "Whiskey Blep",
+            "desc": "What a silly little goober. Doing a silly little blep. Silly goober do silly blep!",
+            "src": "./stickers/whiskey_blep.png",
+            "style": {"top": "15rem"},
+            "class": "sticker",
+            "container-class": "sticker-container",
+            "link": ""
         }
     ]
 }

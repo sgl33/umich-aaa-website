@@ -24,11 +24,12 @@
     width: 10rem;
     z-index: 0;
     margin-right: 1rem;
+    transition: filter 0.5s
 }
 
 .sticker-faded{
     filter: grayscale(60%);
-    transition: filter 0.25s
+    transition: filter 1s
 }
 
 .sticker-container{
