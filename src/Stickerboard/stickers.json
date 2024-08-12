@@ -7,8 +7,7 @@
             "src": "./stickers/whiskey_blep.png",
             "style": {"top": "2rem"},
             "class": "sticker",
-            "container-class": "sticker-container",
-            "link": ""
+            "container-class": "sticker-container"
         },
         {
             "name": "whiskey-bark",
@@ -17,8 +16,7 @@
             "src": "./stickers/whiskey_bark.png",
             "style": {"top": "3rem", "left": "6rem"},
             "class": "sticker",
-            "container-class": "sticker-container",
-            "link": ""
+            "container-class": "sticker-container"
         },
         {
             "name": "whiskey-blep1",
@@ -27,8 +25,7 @@
             "src": "./stickers/whiskey_blep.png",
             "style": {"top": "15rem"},
             "class": "sticker",
-            "container-class": "sticker-container",
-            "link": ""
+            "container-class": "sticker-container"
         }
     ]
 }

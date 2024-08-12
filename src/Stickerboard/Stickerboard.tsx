@@ -26,34 +26,32 @@ const Stickerboard:FC<IProps> = () => {
                 return(
                     <>
                         <div id={element["name"] + "_container"}className={element["container-class"]} style={element["style"]} key={element["display-name"]}>
-                            <a href={element["link"]}>
-                                    <img
-                                    onMouseOver={() => {
-                                        const sticks = document.querySelectorAll("." + element["class"]) as unknown as HTMLCollectionOf<HTMLElement>;
-                                        for (let i = 0; i < sticks.length; i++) {
-                                            sticks[i].classList.add("sticker-faded")
-                                        }
-                                        const thisstick = document.getElementById(element["name"]);
-                                        thisstick!.classList.remove("sticker-faded")
-                                        const blurb = document.getElementById(element["name"] + "_blurb"); 
-                                        blurb!.style.opacity = "100"; 
-                                        const cont = document.getElementById(element["name"] + "_container");
-                                        cont!.style.zIndex = "10";}}
-                                    onMouseLeave={() => {
-                                        const sticks = document.querySelectorAll("." + element["class"]) as unknown as HTMLCollectionOf<HTMLElement>;
-                                        for (let i = 0; i < sticks.length; i++) {
-                                            sticks[i].classList.remove("sticker-faded")
-                                        }
-                                        const blurb = document.getElementById(element["name"] + "_blurb"); 
-                                        blurb!.style.opacity = "0"; 
-                                        const cont = document.getElementById(element["name"] + "_container");
-                                        cont!.style.zIndex = "0";}}
-                                    src={element["src"]}
-                                    id={element["name"]}
-                                    alt={element["display-name"]}
-                                    className={element["class"]}
-                                />
-                            </a>
+                            <img
+                                onMouseOver={() => {
+                                    const sticks = document.querySelectorAll("." + element["class"]) as unknown as HTMLCollectionOf<HTMLElement>;
+                                    for (let i = 0; i < sticks.length; i++) {
+                                        sticks[i].classList.add("sticker-faded")
+                                    }
+                                    const thisstick = document.getElementById(element["name"]);
+                                    thisstick!.classList.remove("sticker-faded")
+                                    const blurb = document.getElementById(element["name"] + "_blurb"); 
+                                    blurb!.style.opacity = "100"; 
+                                    const cont = document.getElementById(element["name"] + "_container");
+                                    cont!.style.zIndex = "10";}}
+                                onMouseLeave={() => {
+                                    const sticks = document.querySelectorAll("." + element["class"]) as unknown as HTMLCollectionOf<HTMLElement>;
+                                    for (let i = 0; i < sticks.length; i++) {
+                                        sticks[i].classList.remove("sticker-faded")
+                                    }
+                                    const blurb = document.getElementById(element["name"] + "_blurb"); 
+                                    blurb!.style.opacity = "0"; 
+                                    const cont = document.getElementById(element["name"] + "_container");
+                                    cont!.style.zIndex = "0";}}
+                                src={element["src"]}
+                                id={element["name"]}
+                                alt={element["display-name"]}
+                                className={element["class"]}
+                            />
                             <div className="info-blurb" id={element["name"] + "_blurb"}>
                                 <h3>{element["display-name"]}</h3>
                                 <p>{element["desc"]}</p>
