@@ -7,8 +7,12 @@ import instagramIcon from "../common/instagram-icon.svg"
 import discordIcon from "../common/discord-icon.png"
 import clubLogo from "../common/club-logo.jpg"
 import calendarIcon from "../common/calendar-icon.svg"
+import { gapi } from 'gapi-script'
+import date from 'date-and-time';
 
 import { BrowserView, MobileView } from "react-device-detect"
+import { useEffect, useState } from "react";
+import moment from "moment";
 
 const sampleUpcomingEvents = [
     { 
@@ -25,6 +29,8 @@ const sampleUpcomingEvents = [
     }
 ]
 
+
+
 export default function LandingView(): JSX.Element {
     let upcomingEvents = sampleUpcomingEvents; // TODO
 
@@ -33,7 +39,46 @@ export default function LandingView(): JSX.Element {
         if (newWindow) newWindow.opener = null
     }
 
+    const calendarID = process.env.REACT_APP_CALENDAR_ID
+    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
+    const accessToken = process.env.REACT_APP_GOOGLE_ACCESS_TOKEN
+    
+    const [events, setEvents] = useState<any[]>([])
+
+    const generateCalendar = (calendarID: string | undefined, apiKey: string | undefined): any => {
+        function initiate() {
+          gapi.client
+              .init({
+                  apiKey: apiKey,
+              })
+              .then(function () {
+                  return gapi.client.request({
+                      path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+                  })
+              })
+              .then(
+                  (response) => {
+                      let gotEvents = response.result.items
+                      console.log(gotEvents);
+                      setEvents(gotEvents);
+                  },
+                  function (err) {
+                      return [false, err]
+                  }
+              )
+        }
+        gapi.load('client', initiate);
+    }
+
+    useEffect(()=>{
+        console.log("events variable");
+        console.log(events);
+    }, [events]);
+    useEffect( () => {
+        generateCalendar(calendarID, apiKey)
+    }, []);
     return (
+
         <div id="landing" className="view-section-container">
             <div className="view-content-container">
                 {/* Top icons and social media buttons */}
@@ -78,20 +123,20 @@ export default function LandingView(): JSX.Element {
                 <div className="invert-content">
                     <h2>Upcoming Events</h2>
                     <BrowserView>
-                        { upcomingEvents.map((event, index) => {
+                        { events.map((event) => {
                             return (
-                                <div className="upcoming-event-container-desktop" key={index}>
+                                <div className="upcoming-event-container-desktop" key={event.sequence}>
                                     <h4 className="upcoming-event-name">
-                                        {event.name}
+                                        {event.summary}
                                     </h4>
                                     <p className="upcoming-event-location">
-                                        {event.location}
+                                        {event.location.includes("Sample Location") ? "TBD" : event.location}
                                     </p>
                                     <p className="upcoming-event-time">
-                                        {event.timeLine1}
+                                        {moment(event.start.dateTime).format("h:mm a").toString() + " - " + moment(event.end.dateTime).format("h:mm a").toString()}
                                     </p>
                                     <p className="upcoming-event-time">
-                                        {event.timeLine2}
+                                        {moment(event.start.dateTime).format("dddd, LL").toString()}
                                     </p>
                                 </div>
                             )
