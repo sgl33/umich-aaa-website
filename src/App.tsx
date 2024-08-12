@@ -14,6 +14,10 @@ function App() {
           <div className="app">
               <LandingView />
               <AboutView />
+              <FurriesView />
+              <JoinView />
+              <AdminsView />
+              <FAQsView />
           </div>
         }>
         </Route>
@@ -21,6 +25,10 @@ function App() {
           <div className="app">
               <LandingView />
               <AboutView />
+              <FurriesView />
+              <JoinView />
+              <AdminsView />
+              <FAQsView />
           </div>
         }>
         </Route>

@@ -7,6 +7,7 @@
     padding: 0;
 }
 
+/* Section */
 .view-section-container {
     /* width: calc(100% + 12px);
     margin-left: -6px; */
@@ -15,7 +16,14 @@
     margin-top: -6px;
     margin-bottom: 4px;
     padding: 24px 0;
+    
 }
+.view-section-container-limit-height {
+    height: 540px;
+    overflow-y: scroll;
+}
+
+/* Content */
 .view-content-container {
     text-align: left;
     /* border-style: solid;
@@ -30,30 +38,79 @@
     margin-top: 8px;
     margin-bottom: 4px;
 }
+.view-content-title-small {
+    font-size: 22pt;
+    font-weight: 800;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
 .view-content-subtitle {
     font-size: 13pt;
     margin-bottom: 16px;
 }
-
 .invert-content {
     color: white;
     margin: 16px 0;
 }
 
-
-.carousel-desktop {
+/* 2 column view */
+.view-content-2-col-equal {
+    
+}
+.view-content-2-col-equal .view-content-block {
+    display: inline-block;
+    width: 42%;
+    /* border-style: solid; */
+    margin-right: 8%;
+    vertical-align: top;
+    margin-top: 12px; margin-bottom: 12px;
+}
+.view-content-2-col-mobile {
+    max-height: 60%;
+    overflow-y: scroll;
+}
+.view-content-2-col-mobile .view-content-block {
     width: 100%;
+    margin-top: 12px; margin-bottom: 24px;
+    /* border-style: solid; */
+}
+
+/* Carousel */
+.carousel-desktop {
     min-height: 180px;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     border-style: none;
-    width: 98%; max-width: 960px;
-    max-height: 540px;
+    width: 100%;
+    max-height: 600px;
     margin: auto;
     margin-bottom: 12px;
     position: relative;
+    vertical-align: bottom;
+}
+.carousel-desktop img {
+    max-height: 600px;
+    object-fit: cover;
+    vertical-align: center;
+}
+.carousel-desktop-container {
+    /* max-height: 800px; */
+    overflow-y: hidden;
+}
+.carousel-mobile-container {
+    width: 102%;
+    margin-left: -1%;
+    margin-bottom: 12px;
 }
 .carousel-mobile {
-
+    /* border-style: none; */
+    /* border-style: solid; */
+    /* border-color: red; */
+}
+.slick-list {
+    vertical-align: middle;
+}
+.slick-track {
+    margin-bottom: -24px;
 }
 .carousel img {
     width: 100%;

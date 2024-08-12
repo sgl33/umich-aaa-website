@@ -2,13 +2,17 @@ import "./Landing.css";
 import "../App.css"
 
 import backgroundImg from "../common/aaa-background.jpg"
-import twitterIcon from "../common/twitter-icon.svg"
-import instagramIcon from "../common/instagram-icon.svg"
-import discordIcon from "../common/discord-icon.png"
-import clubLogo from "../common/club-logo-transparent.png"
-import calendarIcon from "../common/calendar-icon.svg"
+import twitterIcon from "../common./common/twitter-icon.svg"
+import instagramIcon from "../common./common/instagram-icon.svg"
+import discordIcon from "../common./common/discord-icon.png"
+import clubLogo from "../common/club-logo.png"
+import calendarIcon from "../common./common/calendar-icon.svg"
+import { gapi } from 'gapi-script'
+import date from 'date-and-time';
 
 import { BrowserView, MobileView } from "react-device-detect"
+import { useEffect, useState } from "react";
+import moment from "moment";
 
 const sampleUpcomingEvents = [
     { 
@@ -25,6 +29,8 @@ const sampleUpcomingEvents = [
     }
 ]
 
+
+
 export default function LandingView(): JSX.Element {
     let upcomingEvents = sampleUpcomingEvents; // TODO
 
@@ -33,7 +39,40 @@ export default function LandingView(): JSX.Element {
         if (newWindow) newWindow.opener = null
     }
 
+    const calendarID = process.env.REACT_APP_CALENDAR_ID
+    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY
+    const accessToken = process.env.REACT_APP_GOOGLE_ACCESS_TOKEN
+    
+    const [events, setEvents] = useState<any[]>([])
+
+    const generateCalendar = (calendarID: string | undefined, apiKey: string | undefined): any => {
+        function initiate() {
+          gapi.client
+              .init({
+                  apiKey: apiKey,
+              })
+              .then(function () {
+                  return gapi.client.request({
+                      path: `https://www.googleapis.com/calendar/v3/calendars/${calendarID}/events`,
+                  })
+              })
+              .then(
+                  (response) => {
+                      let gotEvents = response.result.items
+                      setEvents(gotEvents);
+                  },
+                  function (err) {
+                      return [false, err]
+                  }
+              )
+        }
+        gapi.load('client', initiate);
+    }
+    useEffect( () => {
+        generateCalendar(calendarID, apiKey)
+    }, []);
     return (
+
         <div id="landing" className="view-section-container">
             <div className="view-content-container">
                 {/* Top icons and social media buttons */}
@@ -45,11 +84,11 @@ export default function LandingView(): JSX.Element {
                     </div>
                     <div className="right-icons">
                         <button className="icon-button-invert"
-                                onClick={() => openInNewTab("https://x.com/AnthroArtAssociation")}>
+                                onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}>
                             <img src={twitterIcon} alt="Twitter"/>
                         </button>
                         <button className="icon-button-invert"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}>
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}>
                             <img src={instagramIcon} alt="Instagram"/>
                         </button>
                         <button className="icon-button-invert"
@@ -72,26 +111,26 @@ export default function LandingView(): JSX.Element {
                     </a>
                 </div>
 
-                <div style={{height: "60px"}}></div>
+                <div style={{height: "100px"}}></div>
                 
                 {/* Upcoming Events */}
                 <div className="invert-content">
                     <h2>Upcoming Events</h2>
                     <BrowserView>
-                        { upcomingEvents.map((event, index) => {
+                        { events.filter((e) => Date.parse(e.end.dateTime) > Date.now()).sort((a,b) => Date.parse(a.start.dateTime)-Date.parse(b.start.dateTime)).slice(0,2).map((event) => {
                             return (
-                                <div className="upcoming-event-container-desktop" key={index}>
+                                <div className="upcoming-event-container-desktop" key={event.sequence}>
                                     <h4 className="upcoming-event-name">
-                                        {event.name}
+                                        {event.summary ? event.summary : ""}
                                     </h4>
                                     <p className="upcoming-event-location">
-                                        {event.location}
+                                        {event.location ? event.location.includes("Sample Location") ? "TBD" : event.location : ""}
                                     </p>
                                     <p className="upcoming-event-time">
-                                        {event.timeLine1}
+                                        {event.start.dateTime && event.end.dateTime ? moment(event.start.dateTime).format("h:mm a").toString() + " - " + moment(event.end.dateTime).format("h:mm a").toString() : ""}
                                     </p>
                                     <p className="upcoming-event-time">
-                                        {event.timeLine2}
+                                        {event.start.dateTime ? moment(event.start.dateTime).format("dddd, LL").toString() : ""}
                                     </p>
                                 </div>
                             )
@@ -102,10 +141,10 @@ export default function LandingView(): JSX.Element {
                             </p>
                             <img src={twitterIcon} className="upcoming-event-icon"
                                 alt="Twitter Icon"
-                                onClick={() => openInNewTab("https://x.com/AnthroArtAssoci")}/>
+                                onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}/>
                             <img src={instagramIcon} className="upcoming-event-icon"
-                                alt="InstagramIcon"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}/>
+                                alt="Instagram Icon"
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
                                 onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>
@@ -115,24 +154,29 @@ export default function LandingView(): JSX.Element {
                         </div>
                     </BrowserView>
                     <MobileView>
-                        <div className="upcoming-event-container-mobile">
-                            <h4 className="upcoming-event-name">
-                                {upcomingEvents[0].name}
-                            </h4>
-                            <p className="upcoming-event-location">
-                                {upcomingEvents[0].location}
-                            </p>
-                            <p className="upcoming-event-time">
-                                {upcomingEvents[0].timeLine1}
-                            </p>
-                            <p className="upcoming-event-time">
-                                {upcomingEvents[0].timeLine2}
-                            </p>
-                        </div>
+                    { events.filter((e) => Date.parse(e.end.dateTime) > Date.now()).sort((a,b) => Date.parse(a.start.dateTime)-Date.parse(b.start.dateTime)).slice(0,1).map((event) => {
+                            return (
+                                <div className="upcoming-event-container-desktop" key={event.sequence}>
+                                    <h4 className="upcoming-event-name">
+                                        {event.summary ? event.summary : ""}
+                                    </h4>
+                                    <p className="upcoming-event-location">
+                                        {event.location ? event.location.includes("Sample Location") ? "TBD" : event.location : ""}
+                                    </p>
+                                    <p className="upcoming-event-time">
+                                        {event.start.dateTime && event.end.dateTime ? moment(event.start.dateTime).format("h:mm a").toString() + " - " + moment(event.end.dateTime).format("h:mm a").toString() : ""}
+                                    </p>
+                                    <p className="upcoming-event-time">
+                                        {event.start.dateTime ? moment(event.start.dateTime).format("dddd, LL").toString() : ""}
+                                    </p>
+                                </div>
+                            )
+                        })}
                         <button className="upcoming-event-more-button-mobile"
                             onClick={() => openInNewTab("https://calendar.google.com/calendar/u/1?cid=Y185YjdlNTcxZmYwNzk0NzI2MjgzYzI4NTE5MzUzOWIwZDAzNWYzMGIwNmEyMTJiM2ZhYjlmZTNmMjQ3NzE5Zjc0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20")}>
                             +
                         </button>
+
 
 
                         <div className="upcoming-event-container-mobile-small">
@@ -140,10 +184,10 @@ export default function LandingView(): JSX.Element {
                             <div className="right-icons">
                             <img src={twitterIcon} className="upcoming-event-icon"
                                 alt="Twitter Icon"
-                                onClick={() => openInNewTab("https://x.com/AnthroArtAssoci")}/>
+                                onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}/>
                             <img src={instagramIcon} className="upcoming-event-icon"
                                 alt="InstagramIcon"
-                                onClick={() => openInNewTab("https://www.instagram.com/anthroartassociation/")}/>
+                                onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
                                 onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>
@@ -156,7 +200,7 @@ export default function LandingView(): JSX.Element {
 
             {/* Bakground */}
             <div className="color-overlay-blue"></div>
-            <img src={backgroundImg} id="landing-background-img" />
+            <img src={backgroundImg} id="landing-background-img" alt="7 fursuiters at Festifall 2023"/>
         </div>
     );
         

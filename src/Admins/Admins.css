@@ -1,0 +1,67 @@
+
+#admin {
+    background-color: white;
+}
+.admins-view-content-mobile, .admins-view-content-desktop {
+    width: 100%;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.admin-item {
+    display: inline-block;
+    vertical-align: top;
+}
+.admins-view-content-mobile .admin-item {
+    width: 100px;
+    margin: 12px 12px;
+
+}
+.admins-view-content-desktop .admin-item {
+    /* border-style: solid; */
+    width: 160px;
+    margin: 16px calc(10% - 96px);
+}
+.admins-view-content-mobile .admin-pfp {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* border-style: solid;
+    border-color: lightgray; */
+    margin-bottom: 4px;
+    object-fit: cover;
+}
+.admins-view-content-desktop .admin-pfp {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* border-style: solid;
+    border-color: lightgray; */
+    margin-bottom: 8px;
+}
+.admin-name-text {
+    
+}
+.admins-view-content-mobile .admin-name-text {
+    font-size: 12pt;
+    margin-bottom: 0px;
+}
+.admins-view-content-desktop .admin-name-text {
+    margin-bottom: 2pt;
+}
+.admins-view-content-desktop .admin-role-text {
+    margin-bottom: 10px;
+}
+.admins-view-content-mobile .admin-role-text {
+    font-size: 10.5pt;
+    margin-bottom: 8px;
+}
+
+
+.admin-social-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0px 8px;
+}
