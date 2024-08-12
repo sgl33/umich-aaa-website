@@ -17,7 +17,7 @@ export default function FurriesView(): JSX.Element {
                 <h1 className="view-content-title">Join the club!</h1>
                 <p className="view-content-subtitle">We can't wait to have you here.</p>
 
-                <img src={backgroundImg} className="full-image" />
+                <img src={backgroundImg} className="full-image" alt="5 fursuiters at Anthrocon" />
 
                 <div className={isMobile ? "view-content-2-col-mobile" : "view-content-2-col-equal"}>
                     <div className="view-content-block">
@@ -50,8 +50,8 @@ export default function FurriesView(): JSX.Element {
                         </ul>
                     </div>
                 </div>
-                <ActionButton img={discordIcon} text="Join our Discord server!" color="white" backgroundColor="#5865F2" invertIconColor={true} onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>
-                <ActionButton img={twitterIcon} text="Follow our Twitter!" color="white" backgroundColor="#1DA1F2" invertIconColor={true} smallerIcon={true} onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}/>
+                <ActionButton img={discordIcon} text="Join our Discord server!" color="white" backgroundColor="#5865F2" invertIconColor={true} onClick={() => openInNewTab("https://discord.gg/TteNpmmj")} alt="Discord Icon"/>
+                <ActionButton img={twitterIcon} text="Follow our Twitter!" color="white" backgroundColor="#1DA1F2" invertIconColor={true} smallerIcon={true} onClick={() => openInNewTab("https://x.com/FurriesAtUMich")} alt="Twitter Icon/>
             </div>
         </div>
     )

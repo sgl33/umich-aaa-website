@@ -32,7 +32,7 @@ export default function AboutView() {
                 {/* What do we do? */}
                 <BrowserView>
                     <div className="view-content-three-rows">
-                        <img src={clubLogo} className="content-left" />
+                        <img src={clubLogo} className="content-left" alt="Club Logo"/>
                         <div className="content-middle">
                             <h2>What is AAA?</h2>
                             <p>
@@ -58,15 +58,15 @@ export default function AboutView() {
                     {/* Carousel */}
                     <div className="carousel-desktop-container">
                         <Slider {...carouselSettings} className="carousel-desktop">
-                            <img src={takio05} />
-                            <img src={festifall2023} />
+                            <img src={takio05} alt="9 fursuiters gather at the University of Michigan Museum of Art"/>
+                            <img src={festifall2023} alt="4 fursuiters hold up club banner behind a sign saying 'Jesus saves from hell'" />
                         </Slider>
                     </div>
                     
                 </BrowserView>
                 <MobileView>
                     <div>
-                        <img src={clubLogo} className="club-logo-mobile"/>
+                        <img src={clubLogo} className="club-logo-mobile" alt="Club Logo" />
                         <div className="view-content-mobile">
                             <h2>What is AAA?</h2>
                             <p>
@@ -100,8 +100,8 @@ export default function AboutView() {
             <div id="about-mobile" className="view-section-container">
                 <div className="carousel-mobile-container">
                 <Slider {...carouselSettings} className="carousel-desktop">
-                    <img src={takio05} />
-                    <img src={festifall2023} />
+                    <img src={takio05} alt="9 fursuiters gather at the University of Michigan Museum of Art"/>
+                    <img src={festifall2023} alt="4 fursuiters hold up club banner behind a sign saying 'Jesus saves from hell'" />
                 </Slider>
                 </div>
             </div>
