@@ -172,6 +172,10 @@ export default function LandingView(): JSX.Element {
                                 </div>
                             )
                         })}
+                        <button className="upcoming-event-more-button-mobile"
+                            onClick={() => openInNewTab("https://calendar.google.com/calendar/u/1?cid=Y185YjdlNTcxZmYwNzk0NzI2MjgzYzI4NTE5MzUzOWIwZDAzNWYzMGIwNmEyMTJiM2ZhYjlmZTNmMjQ3NzE5Zjc0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20")}>
+                            +
+                        </button>
 
 
 
