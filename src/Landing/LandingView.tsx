@@ -117,7 +117,7 @@ export default function LandingView(): JSX.Element {
                 <div className="invert-content">
                     <h2>Upcoming Events</h2>
                     <BrowserView>
-                        { events.sort((a,b) => Date.parse(a.start.dateTime)-Date.parse(b.start.dateTime)).slice(0,2).map((event) => {
+                        { events.filter((e) => Date.parse(e.end.dateTime) > Date.now()).sort((a,b) => Date.parse(a.start.dateTime)-Date.parse(b.start.dateTime)).slice(0,2).map((event) => {
                             return (
                                 <div className="upcoming-event-container-desktop" key={event.sequence}>
                                     <h4 className="upcoming-event-name">
@@ -154,7 +154,7 @@ export default function LandingView(): JSX.Element {
                         </div>
                     </BrowserView>
                     <MobileView>
-                    { events.sort((a,b) => Date.parse(a.start.dateTime)-Date.parse(b.start.dateTime)).slice(0,1).map((event) => {
+                    { events.filter((e) => Date.parse(e.end.dateTime) > Date.now()).sort((a,b) => Date.parse(a.start.dateTime)-Date.parse(b.start.dateTime)).slice(0,1).map((event) => {
                             return (
                                 <div className="upcoming-event-container-desktop" key={event.sequence}>
                                     <h4 className="upcoming-event-name">
