@@ -102,7 +102,7 @@ export default function LandingView(): JSX.Element {
                                 alt="Twitter Icon"
                                 onClick={() => openInNewTab("https://x.com/FurriesAtUMich")}/>
                             <img src={instagramIcon} className="upcoming-event-icon"
-                                alt="InstagramIcon"
+                                alt="Instagram Icon"
                                 onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
@@ -154,7 +154,7 @@ export default function LandingView(): JSX.Element {
 
             {/* Bakground */}
             <div className="color-overlay-blue"></div>
-            <img src={backgroundImg} id="landing-background-img" />
+            <img src={backgroundImg} id="landing-background-img" alt="7 fursuiters at Festifall 2023"/>
         </div>
     );
         
