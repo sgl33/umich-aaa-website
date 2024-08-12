@@ -6,6 +6,10 @@ import LandingView from './Landing/LandingView';
 import AboutView from './About/AboutView';
 import { Route, Routes } from 'react-router';
 import Stickerboard from './Stickerboard/Stickerboard';
+import FurriesView from './Furries/FurriesView';
+import JoinView from './Join/JoinView';
+import AdminsView from './Admins/AdminsView';
+import FAQsView from './FAQs/FAQsView';
 
 function App() {
   return (

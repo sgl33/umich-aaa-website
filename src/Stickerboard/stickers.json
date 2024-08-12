@@ -3,17 +3,21 @@
         {
             "name": "whiskey-blep",
             "display-name": "Whiskey Blep",
+            "desc": "What a silly little goober. Doing a silly little blep. Silly goober do silly blep!",
             "src": "./stickers/whiskey_blep.png",
             "style": {"top": "2rem"},
             "class": "sticker",
+            "container-class": "sticker-container",
             "link": ""
         },
         {
             "name": "whiskey-bark",
             "display-name": "Whiskey Bark",
+            "desc": "What a silly little goober. Doing a silly little bark. Silly goober do silly bark!",
             "src": "./stickers/whiskey_bark.png",
-            "style": {"top": "3rem", "left": "6rem", "rotate": "15deg"},
+            "style": {"top": "3rem", "left": "6rem"},
             "class": "sticker",
+            "container-class": "sticker-container",
             "link": ""
         }
     ]
