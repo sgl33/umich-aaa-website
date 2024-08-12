@@ -59,7 +59,6 @@ export default function LandingView(): JSX.Element {
               .then(
                   (response) => {
                       let gotEvents = response.result.items
-                      console.log(gotEvents);
                       setEvents(gotEvents);
                   },
                   function (err) {
@@ -69,11 +68,6 @@ export default function LandingView(): JSX.Element {
         }
         gapi.load('client', initiate);
     }
-
-    useEffect(()=>{
-        console.log("events variable");
-        console.log(events);
-    }, [events]);
     useEffect( () => {
         generateCalendar(calendarID, apiKey)
     }, []);
@@ -123,20 +117,20 @@ export default function LandingView(): JSX.Element {
                 <div className="invert-content">
                     <h2>Upcoming Events</h2>
                     <BrowserView>
-                        { events.map((event) => {
+                        { events.sort((a,b) => Date.parse(a.start.dateTime)-Date.parse(b.start.dateTime)).slice(0,2).map((event) => {
                             return (
                                 <div className="upcoming-event-container-desktop" key={event.sequence}>
                                     <h4 className="upcoming-event-name">
-                                        {event.summary}
+                                        {event.summary ? event.summary : ""}
                                     </h4>
                                     <p className="upcoming-event-location">
-                                        {event.location.includes("Sample Location") ? "TBD" : event.location}
+                                        {event.location ? event.location.includes("Sample Location") ? "TBD" : event.location : ""}
                                     </p>
                                     <p className="upcoming-event-time">
-                                        {moment(event.start.dateTime).format("h:mm a").toString() + " - " + moment(event.end.dateTime).format("h:mm a").toString()}
+                                        {event.start.dateTime && event.end.dateTime ? moment(event.start.dateTime).format("h:mm a").toString() + " - " + moment(event.end.dateTime).format("h:mm a").toString() : ""}
                                     </p>
                                     <p className="upcoming-event-time">
-                                        {moment(event.start.dateTime).format("dddd, LL").toString()}
+                                        {event.start.dateTime ? moment(event.start.dateTime).format("dddd, LL").toString() : ""}
                                     </p>
                                 </div>
                             )
@@ -160,24 +154,25 @@ export default function LandingView(): JSX.Element {
                         </div>
                     </BrowserView>
                     <MobileView>
-                        <div className="upcoming-event-container-mobile">
-                            <h4 className="upcoming-event-name">
-                                {upcomingEvents[0].name}
-                            </h4>
-                            <p className="upcoming-event-location">
-                                {upcomingEvents[0].location}
-                            </p>
-                            <p className="upcoming-event-time">
-                                {upcomingEvents[0].timeLine1}
-                            </p>
-                            <p className="upcoming-event-time">
-                                {upcomingEvents[0].timeLine2}
-                            </p>
-                        </div>
-                        <button className="upcoming-event-more-button-mobile"
-                            onClick={() => openInNewTab("https://calendar.google.com/calendar/u/1?cid=Y185YjdlNTcxZmYwNzk0NzI2MjgzYzI4NTE5MzUzOWIwZDAzNWYzMGIwNmEyMTJiM2ZhYjlmZTNmMjQ3NzE5Zjc0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20")}>
-                            +
-                        </button>
+                    { events.sort((a,b) => Date.parse(a.start.dateTime)-Date.parse(b.start.dateTime)).slice(0,1).map((event) => {
+                            return (
+                                <div className="upcoming-event-container-desktop" key={event.sequence}>
+                                    <h4 className="upcoming-event-name">
+                                        {event.summary ? event.summary : ""}
+                                    </h4>
+                                    <p className="upcoming-event-location">
+                                        {event.location ? event.location.includes("Sample Location") ? "TBD" : event.location : ""}
+                                    </p>
+                                    <p className="upcoming-event-time">
+                                        {event.start.dateTime && event.end.dateTime ? moment(event.start.dateTime).format("h:mm a").toString() + " - " + moment(event.end.dateTime).format("h:mm a").toString() : ""}
+                                    </p>
+                                    <p className="upcoming-event-time">
+                                        {event.start.dateTime ? moment(event.start.dateTime).format("dddd, LL").toString() : ""}
+                                    </p>
+                                </div>
+                            )
+                        })}
+
 
 
                         <div className="upcoming-event-container-mobile-small">

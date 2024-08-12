@@ -51,7 +51,7 @@ export default function FurriesView(): JSX.Element {
                     </div>
                 </div>
                 <ActionButton img={discordIcon} text="Join our Discord server!" color="white" backgroundColor="#5865F2" invertIconColor={true} onClick={() => openInNewTab("https://discord.gg/TteNpmmj")} alt="Discord Icon"/>
-                <ActionButton img={twitterIcon} text="Follow our Twitter!" color="white" backgroundColor="#1DA1F2" invertIconColor={true} smallerIcon={true} onClick={() => openInNewTab("https://x.com/FurriesAtUMich")} alt="Twitter Icon/>
+                <ActionButton img={twitterIcon} text="Follow our Twitter!" color="white" backgroundColor="#1DA1F2" invertIconColor={true} smallerIcon={true} onClick={() => openInNewTab("https://x.com/FurriesAtUMich")} alt="Twitter Icon"/>
             </div>
         </div>
     )

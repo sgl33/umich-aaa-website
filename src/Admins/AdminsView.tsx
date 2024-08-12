@@ -83,7 +83,7 @@ export default function AdminsView(): JSX.Element {
                     <AdminItem name="Rix" role="2024-25" pfp={rixProfileImg}
                         socialIcon1={twitterIcon} socialName1="Twitter" socialLink1="https://x.com/biteyrix"
                         socialIcon2={globeIcon} socialName2="Website" socialLink2="https://rix.dog"/>
-                    <AdminItem name="Mesoon" role="2024-25" pfp={mesoonProfileImg}/>
+                    <AdminItem name="Whiskey Wolf" role="2024-25" pfp={mesoonProfileImg}/>
                 </div>
             </div>
         </div>
