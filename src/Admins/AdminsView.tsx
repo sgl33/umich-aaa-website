@@ -31,7 +31,7 @@ function AdminItem(props: {
 
     return (
         <div className="admin-item">
-            <img src={props.pfp} className="admin-pfp" />
+            <img src={props.pfp} className="admin-pfp" alt={`Profile image for ${props.name}`}/>
             <h3 className="admin-name-text">{props.name}</h3>
             <p className="admin-role-text">{props.role}</p>
             {
@@ -70,10 +70,10 @@ export default function AdminsView(): JSX.Element {
                         socialIcon2={globeIcon} socialName2="Website" socialLink2="https://rix.dog"/>
                     <AdminItem name="Luca" role="Social Chair" pfp={lucaProfileImg}
                         socialIcon1={instagramIcon} socialName1="Instagram" socialLink1="https://www.instagram.com/its_luca_pink/"
-                        socialIcon2={telegramIcon} socialName2="Telegram" socialLink2="t.me/its_luca_pink"/>
+                        socialIcon2={telegramIcon} socialName2="Telegram" socialLink2="http://t.me/its_luca_pink"/>
                 </div>
 
-                <ActionButton img={emailIcon} text="Send an email to admins" color="white" backgroundColor="#00274C" invertIconColor={true} smallerIcon={true} onClick={() => { openInNewTab("mailto:anthroartassociation@gmail.com") }} />
+                <ActionButton img={emailIcon} text="Send an email to admins" color="white" backgroundColor="#00274C" invertIconColor={true} smallerIcon={true} onClick={() => { openInNewTab("mailto:anthroartassociation@gmail.com") }} alt="Email Icon"/>
             </div>
             <Spacer height={12} />
             <div className="view-content-container" style={{ marginBottom: "-16px"}}>
