@@ -30,10 +30,10 @@ export default function FAQsView(): JSX.Element {
                             </div>
                             <div className="faq-item-container">
                                 <p className="faq-question">
-                                    Q: I would like to support your club, what can I do?
+                                    Q: I am an alumnus and would like to support your club, what can I do?
                                 </p>
                                 <p className="faq-answer">
-                                    A: Thank you for your interest in supporting us! We are prohibited from accepting any monetary donations as a voluntary student organization (VSO), but we would be happy to explore other ways you can contribute. Whether it's through offering mentorship, sharing your expertise, or helping us connect with resources, your support would be greatly appreciated. Please <a href="mailto:anthroartassociation@gmail.com" target="_blank">send us an email</a>!
+                                    A: Thank you for your interest in supporting us! We would greatly appreciate donations (please note they are not tax-deductible) as well as other forms of non-monetary support, such as mentorship or sharing your expertise. Please <a href="mailto:anthroartassociation@gmail.com" target="_blank">send us an email</a>!
                                 </p>
                             </div>
                             <h3>Requirements</h3>
