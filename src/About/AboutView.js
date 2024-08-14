@@ -36,7 +36,7 @@ export default function AboutView() {
                         <div className="content-middle">
                             <h2>What is AAA?</h2>
                             <p>
-                                Anthro Art Association (AAA) is a registered voluntary student organization (VSO) at the University oßf Michigan - Ann Arbor.
+                                Anthro Art Association (AAA) is a registered voluntary student organization (VSO) at the University of Michigan - Ann Arbor.
                             </p>
                             <p>
                                 We are a member club of the Anthromorphic Animal Appreciation Association, a global federation of university furry clubs including clubs at UC Berkeley, UIUC, Georgia Tech, and more.
