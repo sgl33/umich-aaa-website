@@ -42,7 +42,7 @@ export default function FAQsView(): JSX.Element {
                                     Q: How much of a commitment is the club?
                                 </p>
                                 <p className="faq-answer">
-                                    A: It's as much of a commitment as you want it to be! Attendance is not required; if the vibe of the club meetings isn't really your thing, you can use our meetings or <a href="https://discord.gg/TteNpmmj" target="_blank">Discord server</a> as an avenue to meet more furs.
+                                    A: It's as much of a commitment as you want it to be! Attendance is not required; if the vibe of the club meetings isn't really your thing, you can use our meetings or <a href="https://discord.gg/Jj7tH5zxzg" target="_blank">Discord server</a> as an avenue to meet more furs.
                                 </p>
                             </div>
                             <div className="faq-item-container">
@@ -93,7 +93,7 @@ export default function FAQsView(): JSX.Element {
                                     Q: Is there an application process to join?
                                 </p>
                                 <p className="faq-answer">
-                                    A: No, anyone can join by simply joining the <a href="https://discord.gg/TteNpmmj" target="_blank">Discord server</a> and/or contacting the admins.
+                                    A: No, anyone can join by simply joining the <a href="https://discord.gg/Jj7tH5zxzg" target="_blank">Discord server</a> and/or contacting the admins.
                                 </p>
                             </div>
                             <div className="faq-item-container">

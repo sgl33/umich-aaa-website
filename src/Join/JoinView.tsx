@@ -39,7 +39,7 @@ export default function FurriesView(): JSX.Element {
                         </p>
                         <ul>
                             <li>
-                                Join our <a href="https://discord.gg/TteNpmmj" target="_blank">Discord server</a>. You will receive updates and get the link to the Telegram group chat.
+                                Join our <a href="https://discord.gg/Jj7tH5zxzg" target="_blank">Discord server</a>. You will receive updates and get the link to the Telegram group chat.
                             </li>
                             <li>
                                 DM us on <a href="https://www.instagram.com/furriesatumich/" target="_blank">Instagram</a> or <a href="#admin">email us</a>.
@@ -50,7 +50,7 @@ export default function FurriesView(): JSX.Element {
                         </ul>
                     </div>
                 </div>
-                <ActionButton img={discordIcon} text="Join our Discord server!" color="white" backgroundColor="#5865F2" invertIconColor={true} onClick={() => openInNewTab("https://discord.gg/TteNpmmj")} alt="Discord Icon"/>
+                <ActionButton img={discordIcon} text="Join our Discord server!" color="white" backgroundColor="#5865F2" invertIconColor={true} onClick={() => openInNewTab("https://discord.gg/Jj7tH5zxzg")} alt="Discord Icon"/>
                 <ActionButton img={twitterIcon} text="Follow our Twitter!" color="white" backgroundColor="#1DA1F2" invertIconColor={true} smallerIcon={true} onClick={() => openInNewTab("https://x.com/FurriesAtUMich")} alt="Twitter Icon"/>
             </div>
         </div>

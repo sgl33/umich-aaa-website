@@ -92,7 +92,7 @@ export default function LandingView(): JSX.Element {
                             <img src={instagramIcon} alt="Instagram"/>
                         </button>
                         <button className="icon-button-invert"
-                                onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}>
+                                onClick={() => openInNewTab("https://discord.gg/Jj7tH5zxzg")}>
                             <img src={discordIcon} alt="Discord"/>
                         </button>
                     </div>
@@ -147,7 +147,7 @@ export default function LandingView(): JSX.Element {
                                 onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
-                                onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>
+                                onClick={() => openInNewTab("https://discord.gg/Jj7tH5zxzg")}/>
                             <img src={calendarIcon} className="upcoming-event-icon"
                                     alt="Calendar Icon"
                                     onClick={() => openInNewTab("https://calendar.google.com/calendar/u/1?cid=Y185YjdlNTcxZmYwNzk0NzI2MjgzYzI4NTE5MzUzOWIwZDAzNWYzMGIwNmEyMTJiM2ZhYjlmZTNmMjQ3NzE5Zjc0QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20")}/>
@@ -192,7 +192,7 @@ export default function LandingView(): JSX.Element {
                                 onClick={() => openInNewTab("https://www.instagram.com/furriesatumich/")}/>
                             <img src={discordIcon} className="upcoming-event-icon"
                                 alt="Discord Icon"
-                                onClick={() => openInNewTab("https://discord.gg/TteNpmmj")}/>
+                                onClick={() => openInNewTab("https://discord.gg/Jj7tH5zxzg")}/>
                             </div>
                             
                         </div>
